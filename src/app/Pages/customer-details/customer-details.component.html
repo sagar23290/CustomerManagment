@@ -1,0 +1,81 @@
+<form class="form-horizontal" (ngSubmit)="saveDetails()">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="firstName">First Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="FirstName" [(ngModel)]="objCustomer.FirstName" id="firstName" placeholder="Enter email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="middleName">Middle Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="middleName" [(ngModel)]="objCustomer.MiddleName" id="firstName" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" [(ngModel)]="objCustomer.LastName"
+       id="lastName" name="LastName" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="age">Age:</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" name="age" [(ngModel)]="objCustomer.Age" id="age" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="gender">Gender:</label>
+    <div class="col-sm-10" *ngFor="let item of genderArr">
+      <input type="radio" class="form-control" value="item" name="gender" [(ngModel)]="objCustomer.Gender" id="gender" >
+      {{ item }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="address">Address:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="address" [(ngModel)]="objCustomer.Address" id="address" >
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+           First Name
+        </th>
+        <th>
+          Last Name
+       </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Age
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let item of objCustomerArray">
+      <td>
+          {{item.FirstName}}
+      </td>
+      <td>
+        {{item.LastName}}
+    </td>
+      <td>
+          {{item.Gender}}
+      </td>
+      <td>
+          {{item.Age}}
+      </td>
+      <td>
+        <a (click)="edit(item)" hre="javascript:void(0)" >Edit</a>
+      </td>
+    </tr>
+  </table>
+</form>
