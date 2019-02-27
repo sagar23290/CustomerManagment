@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CustomerDetails } from '../../Models/customer-details';
 import { CustomerServiceService } from '../../Services/customer-service.service'
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',
@@ -9,10 +10,10 @@ import { CustomerServiceService } from '../../Services/customer-service.service'
 export class CustomerDetailsComponent implements OnInit {
 
   objCustomer : CustomerDetails = new CustomerDetails();
-  genderArr = ['Male','Female'];
+  genderArr = [{'Value':'M','Text' : 'Male'},{'Value':'F','Text' : 'Female'}];
   objCustomerArray: CustomerDetails[];
   constructor(private customerservice:CustomerServiceService) { }
-
+  @ViewChild('form') form :NgForm;
   ngOnInit() {
     this.getAllCustomerDetails();
   }
@@ -23,6 +24,7 @@ export class CustomerDetailsComponent implements OnInit {
       {
         alert("success")
         this.getAllCustomerDetails();
+        this.form.reset();
       }
                
     }
@@ -58,5 +60,9 @@ export class CustomerDetailsComponent implements OnInit {
     (error)=>{
 
     })
+  }
+  edit(objCustomerDetails : CustomerDetails){
+    this.objCustomer = objCustomerDetails;    
+
   }
 }

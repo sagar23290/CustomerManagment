@@ -47,4 +47,10 @@ export class CustomerServiceService {
   GetAllCustomer(){
     return this.http.get<any>( environment.BASE_API_URL +'api/Customer/GetAllCustomer' );
   };
+  UploadFiles(formData : FormData)
+  {
+    let apiUrl = "api/Customer/UploadFiles";
+
+    return this.http.post<any>( environment.BASE_API_URL + apiUrl, formData)
+  };
 }
