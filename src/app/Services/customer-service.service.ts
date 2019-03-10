@@ -45,7 +45,7 @@ export class CustomerServiceService {
     return this.http.get<any>( environment.BASE_API_URL +'api/Customer/GetCustDetails?CustId='+CustId );
   };
   GetAllCustomer(){
-    return this.http.get<any>( environment.BASE_API_URL +'api/Customer/GetAllCustomer' );
+    return this.http.get<any>( environment.BASE_API_URL +'api/Customer/GetAllCustomers' );
   };
   UploadFiles(formData : FormData)
   {

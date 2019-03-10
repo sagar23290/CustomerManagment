@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { CustomerDetailsComponent } from './Pages/customer-details/customer-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppFileuploadComponent } from './Pages/app-fileupload/app-fileupload.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { SignupComponent } from './Pages/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     CustomerDetailsComponent,
-    AppFileuploadComponent
+    AppFileuploadComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

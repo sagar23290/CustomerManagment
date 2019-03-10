@@ -16,6 +16,7 @@ export class CustomerDetailsComponent implements OnInit {
   @ViewChild('form') form :NgForm;
   ngOnInit() {
     this.getAllCustomerDetails();
+    console.log(document.getElementById("firstName"))  
   }
   saveDetails(){
     this.customerservice.saveCustomerDetails(this.objCustomer)

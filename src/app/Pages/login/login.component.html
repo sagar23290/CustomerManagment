@@ -1,0 +1,19 @@
+
+<form #loginForm="ngForm" class="col s12 white" >
+ <div class="row">
+   <div class="form-group">
+     <input type="text" #UserName ngModel name="UserName" placeholder="Username" [(ngModel)]="objUserDetails.UserName">
+   </div>
+ </div>
+ <div class="row">
+    <div class="form-group">
+      <input type="password" #Password ngModel name="Password" placeholder="Password" [(ngModel)]="objUserDetails.Password">
+    </div>
+  </div>
+  <div class="row">
+      <div class="form-group">
+        <button  class="btn-large btn-submit btn-primary" type="submit">Login</button>
+        <a routerLink="/Signup" routerLinkActive="active">Sign Up</a>
+      </div>
+    </div>
+</form>
